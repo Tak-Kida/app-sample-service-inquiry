@@ -1,0 +1,48 @@
+/*真ん中寄せ*/
+body{
+  width:100%;
+  text-align:center;
+}
+#wrap{
+  width: 960px;
+  margin: 0 auto;
+  text-align:left;
+}
+/*タイトルの枠*/
+.cp_h1title {
+	padding: 4px 0;
+	border-top: 3px double #668ad8;
+	border-bottom: 3px double #668ad8;
+	text-align: center;
+	color: #668ad8;
+}
+/*ログイン情報入力フォームの枠*/
+ul, ol {
+  color: #668ad8; 
+  border: double 5px #668ad8;/*二重線 太さ 色*/
+  background: #f1f8ff; 
+  margin-left: 100px;/*はみ出ないように調整*/
+  margin-right: 100px;/*はみ出ないように調整*/
+  padding: 0.5em 0.5em 0.5em 2em;
+}
+ul li, ol li {
+  line-height: 1.5;
+  padding: 0.5em 0;
+  list-style: none;
+}
+/*入力欄*/
+input {
+  max-height: 50px;
+  min-height: 30px;
+  max-width: 1000px;
+  min-width: 400px;
+  font-size: 75%;
+}
+/*"ログイン"ボタン*/
+.login-btn {
+	//padding: 15px 40px;
+	// 幅と高さを指定
+	width: 100px;
+	height: 50px;
+	font-size: 1.2em;
+}

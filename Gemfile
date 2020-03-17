@@ -36,6 +36,8 @@ gem 'bootsnap', '>= 1.4.2', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  # Use RSpec to test app
+  gem 'rspec-rails', '~> 3.8.0'
 end
 
 group :development do
