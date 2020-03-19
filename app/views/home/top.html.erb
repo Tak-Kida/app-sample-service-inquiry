@@ -1,7 +1,3 @@
-<head>
-<!-- meta name="viewport" content="width=divice-width,initial-scale = 1.0" -->
-</head>
-
 <% if flash[:notice] %>
   <div class="flash">
     <%= flash[:notice] %>
@@ -28,6 +24,20 @@
             <%= link_to("お急ぎのお問い合わせ（未解決）","/posts/index_urgent") %>
         </h2>
     </li>
+    <h2>以下、直近のお問い合わせ一覧</h2>
+        <% @posts.first(5).each  do |post| %>
+            <ul>
+                <li>
+                    <%= post.created_at.strftime('%Y/%m/%d') %>
+                    <%= link_to(post.summary, "/posts/#{post.id}") %>
+                    <% if post.done_flag == true %>
+                        <b><font color="#ff0000">解決済み</font></b>
+                    <%end%>
+                </li>
+            </ul>
+            <br>
+        <% end %>
+    </h2>
     <li>
         <h2>
             <%= link_to("お問い合わせ画面（確認用）","/posts/new") %>

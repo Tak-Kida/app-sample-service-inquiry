@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
-  before_action :set_current_user
-  before_action :authenticate_user, {only:
-   [:index, :index_today, :index_urgent, :solved, :unsolved, :destroy, :show, :edit, :update]}
+  #before_action :set_current_user
+  #before_action :authenticate_user, {only:
+  # [:index, :index_today, :index_urgent, :solved, :unsolved, :destroy, :show, :edit, :update]}
    
     def new
       @post = Post.new
@@ -38,7 +38,7 @@ class PostsController < ApplicationController
     end
   
     def index_urgent
-      @posts = Post.where(urgency: 3).where(done: 0).order(created_at: :desc)
+      @posts = Post.where(urgency: 3).where(done_flag: 0).order(created_at: :desc)
     end
   
     def show

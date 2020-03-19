@@ -4,10 +4,12 @@
     <title>Myapp</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+    <!--画面サイズのモバイル対応 
+    < meta name="viewport" content="width=divice-width,initial-scale = 1.0" >
+    -->
+    </head>
 
   <body>
     <%= yield %>
