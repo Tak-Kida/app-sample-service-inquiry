@@ -33,3 +33,34 @@ input#input_none {
 textarea#textarea_none {
 	display: none;
 }
+//コメント表示画面
+.cp_blockdesign02 .cp_authorname {
+  display: flex;
+  padding: 1em;
+	border-bottom: 0.5px dashed #668ad8;
+}
+.cp_blockdesign02 .cp_authorname h2 {
+	margin: 0 0.5em;
+	width: 100%;
+	color: #668ad8;
+	vertical-align: middle;
+}
+.cp_blockdesign02 .cp_authorname h4 {
+	margin: 0 0.5em;
+	width: 100%;
+	color: #668ad8;
+}
+.cp_blockdesign02 .cp_authorname ul {
+	margin: 0 0;
+	padding: 0.5em 0;
+	width: 30%;
+	text-align: center;
+	border-left: 1px dashed #ffffff;
+}
+.cp_blockdesign02 .cp_authorname li {
+	display: inline;
+	padding: 0 0.5em;
+}
+.cp_blockdesign02 .cp_authorname li a {
+	color: #668ad8;
+}

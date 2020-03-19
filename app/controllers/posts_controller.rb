@@ -47,14 +47,14 @@ class PostsController < ApplicationController
   
     def solved
       @post = Post.find_by(id: params[:id])
-      @post.done = true
+      @post.done_flag = true
       @post.save
       redirect_to("/posts/#{params[:id]}")
     end
   
     def unsolved
       @post = Post.find_by(id: params[:id])
-      @post.done = false
+      @post.done_flag = false
       @post.save
       redirect_to("/posts/#{params[:id]}")
     end

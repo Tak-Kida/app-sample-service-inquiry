@@ -1,0 +1,57 @@
+<h1 class="cp_h1title">お問い合わせ詳細</h1>
+<%= link_to('一覧へ戻る', 'javascript:history.back()') %>
+&nbsp;
+<%= link_to("管理者画面トップへ","/")%>
+<br></br>
+<ul>
+    <div class="cp_blockdesign02">
+        <li>
+            <div class="cp_authorname">
+                <h2>
+                    <%=@post.summary%>
+                    <% if @post.done_flag == true%>
+                        <b><font size="3.5" color="#ff0000">解決済み</font></b>
+                    <%end%>
+                </h2>
+            </div>
+        </li>
+    <div class="cp_authorinfo">
+        <%= @post.detail%>
+        <br>
+        <br>
+        <%= "投稿日時：" %>
+        <%=  @post.created_at.strftime('%Y/%m/%d %H:%M')%>
+        &nbsp;
+        <% if @post.done_flag == true%>
+            <%= link_to("未解決に戻す","/posts/#{@post.id}/unsolved", {method: "post"})%>
+        <% else %>
+            <%= link_to("解決済みにする","/posts/#{@post.id}/solved",{method: "post"})%>
+        <%end%>
+    </div>
+</div>
+</ul>
+<br>
+<br>
+<br>
+<ul>
+    <div class="cp_blockdesign02">
+        <div class="cp_authorname">
+            <h2>
+                <%= "対応：" %>
+                <%=@post.deal_with_policy%>
+            </h2>
+        </div>
+        <div class="cp_authorinfo">
+            <%= @post.deal_with_detail%>
+            <br>
+            <br>
+            <%= "最終更新日時：" %>
+            <%=  @post.updated_at.strftime('%Y/%m/%d %H:%M')%>
+            &nbsp;
+            <%= link_to("コメントする","/posts/#{@post.id}/update")%>
+        </div>
+    </div>
+</ul>
+<br>
+
+<%= link_to("投稿を削除する", post_path, method: :delete, data: { confirm: '削除しますか？' })%>
