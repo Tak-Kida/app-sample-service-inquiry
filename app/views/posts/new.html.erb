@@ -1,0 +1,44 @@
+
+<h1 class="cp_h1title">ご意見、ご要望をお寄せください</h1>
+<br>
+<br>
+<% if @post.errors.full_messages %>
+    <% @post.errors.full_messages.each do |message| %>
+    <div class="flash">
+        <%= message %>
+    </div>
+    <% end %>
+<% end %>
+
+<%= form_tag("/posts/confirm") do %>
+    <ul>
+        <li>
+            <h2>どのようなご意見でしょうか？</h2>
+                <select id ="post_select" select name="urgency">
+                    <option value= 3 >ただちに改善を要する事項について</option>    
+                    <option value= 2 >ご希望、またはご要望について</option>
+                    <option value= 1 >そのほかについて</option>
+                </select>
+        </li>
+        <li>
+            <h2>ご意見の概要</h2>
+            <p>※30文字以内でご入力ください</p>
+            <input name = "summary"></input>
+        </li>
+        <li>
+            <h2>ご意見の詳細</h2>
+            <p>※400文字以内でご入力ください</p>
+            <textarea id="post_form" textarea name = "detail"></textarea>
+        </li>
+        <li>
+            <input id="submit_button" input type="submit" value="送信">
+        </li>
+    </ul>
+<% end %>
+
+<!--おことわり-->
+<p>お寄せいただいたご意見は、サービスの改善以外の用途には決して使用しません<br>
+お客様のプライバシー情報は慎重かつ適切に取り扱います</p>
+<% if session[:user_id] %>
+    <%= link_to("管理者画面トップへ","/home/top")%>
+<% end %>

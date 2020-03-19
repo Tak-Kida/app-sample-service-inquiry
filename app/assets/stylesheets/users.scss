@@ -1,4 +1,4 @@
-/*真ん中寄せ*/
+//真ん中寄せ
 body{
   width:100%;
   text-align:center;
@@ -8,7 +8,7 @@ body{
   margin: 0 auto;
   text-align:left;
 }
-/*タイトルの枠*/
+//タイトルの枠
 .cp_h1title {
 	padding: 4px 0;
 	border-top: 3px double #668ad8;
@@ -16,7 +16,7 @@ body{
 	text-align: center;
 	color: #668ad8;
 }
-/*ログイン情報入力フォームの枠*/
+//ログイン情報入力フォームの枠
 ul, ol {
   color: #668ad8; 
   border: double 5px #668ad8;/*二重線 太さ 色*/
@@ -30,7 +30,7 @@ ul li, ol li {
   padding: 0.5em 0;
   list-style: none;
 }
-/*入力欄*/
+//入力欄
 input {
   max-height: 50px;
   min-height: 30px;
@@ -38,7 +38,7 @@ input {
   min-width: 400px;
   font-size: 75%;
 }
-/*"ログイン"ボタン*/
+//"ログイン"ボタン
 .login-btn {
 	//padding: 15px 40px;
 	// 幅と高さを指定

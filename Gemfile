@@ -26,6 +26,8 @@ gem 'devise'
 # Use Omniauth to implement thirdparty login
 gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
+# Translate error message into Japanese
+gem 'rails-i18n'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'

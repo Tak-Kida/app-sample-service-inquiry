@@ -12,5 +12,27 @@ Rails.application.routes.draw do
     get "login", :to => "users/sessions#new"
     get "logout", :to => "users/sessions#destroy"
   end
-  get '/', to: 'home#top'
+
+  resources :form
+  root 'home#top'
+  #トップページをhomeコントローラのtopアクションに設定
+  get 'home/test' => "home#test"
+  get 'home/top' => "home#top"
+  get 'home/readme' => "home#readme"
+  get '/' => "home#top"
+
+  get 'posts/test' => "posts#test"
+  get 'posts/new' => "posts#new"
+  post 'posts/create' => "posts#create"
+  post 'posts/confirm' => "posts#confirm"
+  get 'posts/done' => "posts#done"
+  get 'posts/index' => "posts#index"
+  get 'posts/index_urgent' => "posts#index_urgent"
+  get 'posts/index_today' => "posts#index_today"
+  get 'posts/:id' => "posts#show"
+  post 'posts/:id/solved' => "posts#solved"
+  post 'posts/:id/unsolved' => "posts#unsolved"
+  get 'posts/:id/update' => "posts#update"
+  post 'posts/:id/edit' => "posts#edit"
+  resources :posts, only: [:destroy]
 end
