@@ -1,16 +1,18 @@
 <h1 class="cp_h1title">従業員専用ログイン画面</h1>
 <br>
 <br>
-<% if notice %>
+<!-- ログインの要求メッセージ
+<% if flash[:notice] %>
   <div class="flash">
-　　<%= notice %>
+    <%= flash[:notice] %>
   </div>
 <% end %>
-<% if alert %>
-  <div class="flash">
-   <%= alert %>
-  </div>
+<% if @error_message%>
+    <div class="flash">
+        <%= @error_message %>
+    </div>
 <% end %>
+-->
 
 <!--ログインフォーム-->
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
@@ -18,14 +20,14 @@
     <li>
       <div class="field">
         <h2>
-          <%= f.label :email %><%= "を入力してください" %><br />
+          <%= f.label :email %><br />
           <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
         </h2>
       </div>
       <br>
       <div class="field">
         <h2>
-          <%= f.label :password %><%= "を入力してください" %><br />
+          <%= f.label :password %><br />
           <%= f.password_field :password, autocomplete: "current-password" %>
         </h2>
       </div>
