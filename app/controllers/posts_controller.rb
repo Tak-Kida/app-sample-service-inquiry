@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
-  #before_action :set_current_user
-  #before_action :authenticate_user, {only:
-  # [:index, :index_today, :index_urgent, :solved, :unsolved, :destroy, :show, :edit, :update]}
+  before_action :set_current_user
+  before_action :authenticate_user!, {only:
+   [:index, :index_today, :index_urgent, :solved, :unsolved, :destroy, :show, :edit, :update]}
    
     def new
       @post = Post.new
