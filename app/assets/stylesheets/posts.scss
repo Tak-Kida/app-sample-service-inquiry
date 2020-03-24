@@ -64,3 +64,14 @@ textarea#textarea_none {
 .cp_blockdesign02 .cp_authorname li a {
 	color: #668ad8;
 }
+//コメント欄
+.cp_blockdesign02 .cp_authorinfo {
+	padding: 1em;
+}
+textarea#comment_form {
+	max-height: 500px;
+min-height: 150px;
+	max-width: 1010px;
+min-width: 1010px;
+font-size: 100%;
+}

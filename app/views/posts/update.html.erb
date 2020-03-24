@@ -1,0 +1,51 @@
+<h1 class="cp_h1title">対応方針編集</h1>
+
+<%= link_to("一覧に戻る","/posts/index") %>
+<br></br>
+
+
+<div class="cp_blockdesign02">
+    <ul>
+        <div class="cp_authorname">
+            <h2>
+                <%=@post.summary%>
+                <% if @post.done_flag == true%>
+                    <b><font size="3.5" color="#ff0000">解決済み</font></b>
+                <%end%>
+            </h2>
+        </div>
+        <div class="cp_authorinfo">
+            <%= @post.detail%>
+            <br>
+            <br>
+            <%= "投稿日時：" %>
+            <%=  @post.created_at.strftime('%Y/%m/%d %H:%M')%>
+        </div>
+    </ul>
+</div>
+
+<br>
+<br>
+<br>
+<div class="cp_blockdesign02">
+    <ul>
+        <%= form_tag("/posts/#{@post.id}/edit") do %>
+            <div class="cp_authorname">    
+                <h2>
+                    <%= "対応：" %>
+                    <input name = "deal_with_policy"value="<%= @post.deal_with_policy %>"></input>
+                </h2>
+            </div>
+            <div class="cp_authorinfo">
+                <textarea id="comment_form" textarea name = "deal_with_detail"><%= @post.deal_with_detail%></textarea>
+                <br>
+                <br>
+                <%= "最終更新日時：" %>
+                <%=  @post.updated_at.strftime('%Y/%m/%d %H:%M')%>
+                &nbsp;
+                <input id="submit_button" input type="submit" value="保存">
+            </div>
+        <% end %>
+    </ul>
+</div>
+<br>

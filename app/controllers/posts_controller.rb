@@ -88,5 +88,4 @@ class PostsController < ApplicationController
         redirect_to("/users/login_form")
       end
     end
-  
-  end
+end
