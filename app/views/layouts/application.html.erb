@@ -6,20 +6,15 @@
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <!--画面サイズのモバイル対応 
+    <!--画面サイズのモバイル対応-->
     < meta name="viewport" content="width=divice-width,initial-scale = 1.0" >
-    -->
-    </head>
+  </head>
 
   <body>
     <%= yield %>
-    <!-- アラートメッセージ 
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    -->
   </body>
 
   <footer id = "footer_admin">
-    <p>(c)copy right Takuma Kida</p>
+    <p>created by Takuma Kida</p>
   </footer>
 </html>

@@ -1,15 +1,13 @@
 <h1 class="cp_h1title">お急ぎのお問い合わせ（未解決）一覧</h1>
 <%= link_to("管理者画面トップへ","/home/top") %>
 <% if @posts.empty? != true%>
-    <p>※お急ぎのお問い合わせのうち、未解決のものを表示しています。</p>
-    <% @posts.each do |post| %>
-        <ul>
-            <li>
-                <%= post.created_at.strftime('%Y/%m/%d') %>
-                <%= link_to(post.summary, "/posts/#{post.id}") %>
-            </li>
-        </ul>
-    <% end %>
+  <p>※お急ぎのお問い合わせのうち、未解決のものを表示しています。</p>
+  <% @posts.each do |post| %>
+    <ul><li>
+      <%= post.created_at.strftime('%Y/%m/%d') %>
+      <%= link_to(post.summary, "/posts/#{post.id}") %>
+    </li></ul>
+  <% end %>
 <% else %>
-    <p>※現在未解決の緊急のお問い合わせはありません。</p>   
+  <p>※現在未解決の緊急のお問い合わせはありません。</p>   
 <% end %>

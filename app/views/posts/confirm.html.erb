@@ -1,33 +1,33 @@
 <h1 class="cp_h1title">お問い合わせ内容の確認</h1>
 
 <ul>
-    <li>
-        <%= form_tag("/posts/create") do %>
-            <h2>
-                <p>以下の内容で送信します。よろしいでしょうか？</p>
-            </h2>
-            <h3>緊急度</h3>
-                <% if @post.urgency == 3 %> 
-                    <%= "ただちに改善を要する事項について" %>
-                <% elsif @post.urgency == 2 %>
-                    <%= "ご希望、またはご要望について" %>
-                <% else @post.urgency == 1 %>
-                    <%= "そのほかについて" %>
-                <% end %>
-                <br>
-                <input id ="input_none" input name = "urgency" value = <%=@post.urgency%>></input>
-            <h3>概要</h3>
-                <%= @post.summary %>
-                <br>
-                <input id ="input_none" input name = "summary" value = <%=@post.summary%>></input>
-            <h3>詳細</h3>
-                <%= @post.detail %>
-                <br>
-                <textarea id ="textarea_none" textarea name = "detail"><%=@post.detail%></textarea>
-                <br>
-                <input id = "submit_button" input type="submit" value="送信する">
+  <li>
+    <%= form_tag("/posts/create") do %>
+      <h2>
+        <p>以下の内容で送信します。よろしいでしょうか？</p>
+      </h2>
+
+      <h3>緊急度</h3>
+        <% if @post.urgency == 3 %> 
+          <%= "ただちに改善を要する事項について" %>
+        <% elsif @post.urgency == 2 %>
+          <%= "ご希望、またはご要望について" %>
+        <% else @post.urgency == 1 %>
+          <%= "そのほかについて" %>
         <% end %>
-        <p></p>
-        <input id = "submit_button" input type="button" value= "戻る" onclick="history.back();">
-    </li>
+      <br>
+      <input id ="input_none" input name = "urgency" value = <%=@post.urgency%>></input>
+      
+      <h3>概要</h3>
+        <%= @post.summary %><br>
+        <input id ="input_none" input name = "summary" value = <%=@post.summary%>></input>
+
+      <h3>詳細</h3>
+        <%= @post.detail %><br>
+        <textarea id ="textarea_none" textarea name = "detail"><%=@post.detail%></textarea><br>
+        <input id = "submit_button" input type="submit" value="送信する">
+        
+    <% end %><p></p>
+    <input id = "submit_button" input type="button" value= "戻る" onclick="history.back();">
+  </li>
 </ul>

@@ -1,24 +1,27 @@
-# README
+☆はじめに
+Tak-Kidaの学習用兼就職活動用に作成したRubyonRailsのポートフォリオです。
+☆概要
+お客様のお問い合わせ送信画面と送信内容の管理画面というサービスです。
+サービスの目的としては、BtoCの事業の問題・課題を管理しやすくすることを目的としています。
+データの例としては、とあるスーパーマーケットにおいて導入されたケースを想定しております。
+☆バージョン
+Ruby  2.6.5
+Rails 6.0.2
+☆実装機能
+お問い合わせ関連
+・一覧表示機能
+・詳細表示機能
+・件数制限表示機能
+・新規登録機能
+・コメント編集機能
+・削除機能
+・目的別表示機能
+・対応ステータス表示機能
+・対応ステータスオンオフ機能
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+ユーザー関連
+・登録機能
+・ログイン/ログアウト機能 
+・閲覧可否制限機能
+☆その他
+・手動QAテスト

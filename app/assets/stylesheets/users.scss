@@ -1,21 +1,3 @@
-//真ん中寄せ
-body{
-  width:100%;
-  text-align:center;
-}
-#wrap{
-  width: 960px;
-  margin: 0 auto;
-  text-align:left;
-}
-//タイトルの枠
-.cp_h1title {
-	padding: 4px 0;
-	border-top: 3px double #668ad8;
-	border-bottom: 3px double #668ad8;
-	text-align: center;
-	color: #668ad8;
-}
 //ログイン情報入力フォームの枠
 ul, ol {
   color: #668ad8; 

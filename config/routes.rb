@@ -16,12 +16,10 @@ Rails.application.routes.draw do
   resources :form
   root 'home#top'
   #トップページをhomeコントローラのtopアクションに設定
-  get 'home/test' => "home#test"
   get 'home/top' => "home#top"
   get 'home/readme' => "home#readme"
   get '/' => "home#top"
 
-  get 'posts/test' => "posts#test"
   get 'posts/new' => "posts#new"
   post 'posts/create' => "posts#create"
   post 'posts/confirm' => "posts#confirm"

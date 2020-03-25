@@ -2,11 +2,11 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-//投稿入力欄(要改善)
+//投稿入力欄
 textarea#post_form {
   max-height: 500px;
   min-height: 150px;
-  max-width: 1150px;
+  max-width: 1000px;
   min-width: 1000px;
   font-size: 100%;
 }
@@ -21,7 +21,6 @@ select#post_select {
 //提出ボタン
 input#submit_button {
 	//padding: 15px 40px;
-	// 幅と高さを指定
 	width: 100px;
 	height: 50px;
 	font-size: 1.2em;
@@ -70,8 +69,8 @@ textarea#textarea_none {
 }
 textarea#comment_form {
 	max-height: 500px;
-min-height: 150px;
+  min-height: 150px;
 	max-width: 1010px;
-min-width: 1010px;
-font-size: 100%;
+  min-width: 1010px;
+  font-size: 100%;
 }

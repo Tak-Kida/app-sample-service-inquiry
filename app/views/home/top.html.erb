@@ -1,3 +1,4 @@
+<!-- flashメッセージ -->
 <% if flash[:notice] %>
   <div class="flash">
     <%= flash[:notice] %>
@@ -6,44 +7,40 @@
 
 <h1 class="cp_h1title">管理者画面トップ</h1>
 <!--ここにテキストを入れるとflashの下になる -->
-<br>
-<br>
+<br><br>
 <ul>
-    <li>
-        <h2>
-            <%= link_to("お問い合わせ一覧","/posts/index") %>
-        </h2>
-    </li>
-    <li>
-        <h2>
-            <%= link_to("本日寄せられたお問い合わせ","/posts/index_today") %>
-        </h2>
-    </li>
-    <li>
-        <h2>
-            <%= link_to("お急ぎのお問い合わせ（未解決）","/posts/index_urgent") %>
-        </h2>
-    </li>
-    <h2>以下、直近のお問い合わせ一覧</h2>
-        <% @posts.first(5).each  do |post| %>
-            <ul>
-                <li>
-                    <%= post.created_at.strftime('%Y/%m/%d') %>
-                    <%= link_to(post.summary, "/posts/#{post.id}") %>
-                    <% if post.done_flag == true %>
-                        <b><font color="#ff0000">解決済み</font></b>
-                    <%end%>
-                </li>
-            </ul>
-            <br>
-        <% end %>
+  <li>
+    <h2>
+      <%= link_to("お問い合わせ一覧","/posts/index") %>
     </h2>
-    <li>
-        <h2>
-            <%= link_to("お問い合わせ画面（確認用）","/posts/new") %>
-        </h2>
-        <h2>
-          <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
-        </h2>
-    </li>
+  </li>
+  <li>
+    <h2>
+      <%= link_to("本日寄せられたお問い合わせ","/posts/index_today") %>
+    </h2>
+  </li>
+  <li>
+    <h2>
+      <%= link_to("お急ぎのお問い合わせ（未解決）","/posts/index_urgent") %>
+    </h2>
+  </li>
+  <h2>以下、直近のお問い合わせ一覧</h2>
+  <% @posts.first(5).each  do |post| %>
+    <ul><li>
+      <%= post.created_at.strftime('%Y/%m/%d') %>
+      <%= link_to(post.summary, "/posts/#{post.id}") %>
+      <% if post.done_flag == true %>
+        <b><font color="#ff0000">解決済み</font></b>
+      <%end%>
+    </li></ul>
+    <br>
+  <% end %>
+  <li>
+    <h2>
+      <%= link_to("お問い合わせ画面（確認用）","/posts/new") %>
+    </h2>
+    <h2>
+      <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
+    </h2>
+  </li>
 </ul>
