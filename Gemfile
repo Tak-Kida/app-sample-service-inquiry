@@ -39,7 +39,7 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # Use RSpec to test app
-  gem 'rspec-rails', '~> 3.8.0'
+  #gem 'rspec-rails', '~> 3.8.0'
 end
 
 group :development do
@@ -57,6 +57,10 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
+  # Use minitest to test assertion
+  gem 'rails-controller-testing'
+  gem 'minitest'
+  gem 'minitest-reporters'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
