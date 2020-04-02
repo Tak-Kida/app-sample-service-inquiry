@@ -1,5 +1,5 @@
 <h1 class="cp_h1title">本日寄せられたお問い合わせ</h1>
-<%= link_to("管理者画面トップへ","/home/top") %>
+<%= link_to("管理者画面トップへ",top_path) %>
 <% if @posts.empty? != true%>
   <% @posts.each do |post| %>
     <ul><li>

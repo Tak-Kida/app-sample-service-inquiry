@@ -7,9 +7,10 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  #test "should get confirm" do
-    #
-  #end
+  test "should get confirm" do
+    get new_path
+    assert_response :success
+  end
 
   test "should get done" do
     get done_path
@@ -30,4 +31,9 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
     get index_urgent_path
     assert_response :success
   end
+
+  #test "should get create" do
+    #get create_path
+    #assert_response :success
+  #end
 end

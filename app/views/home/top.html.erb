@@ -11,17 +11,17 @@
 <ul>
   <li>
     <h2>
-      <%= link_to("お問い合わせ一覧","/posts/index") %>
+      <%= link_to("お問い合わせ一覧", index_path) %>
     </h2>
   </li>
   <li>
     <h2>
-      <%= link_to("本日寄せられたお問い合わせ","/posts/index_today") %>
+      <%= link_to("本日寄せられたお問い合わせ", index_today_path) %>
     </h2>
   </li>
   <li>
     <h2>
-      <%= link_to("お急ぎのお問い合わせ（未解決）","/posts/index_urgent") %>
+      <%= link_to("お急ぎのお問い合わせ（未解決）", index_urgent_path) %>
     </h2>
   </li>
   <h2>以下、直近のお問い合わせ一覧</h2>
@@ -37,7 +37,7 @@
   <% end %>
   <li>
     <h2>
-      <%= link_to("お問い合わせ画面（確認用）","/posts/new") %>
+      <%= link_to("お問い合わせ画面（確認用）", new_path) %>
     </h2>
     <h2>
       <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>

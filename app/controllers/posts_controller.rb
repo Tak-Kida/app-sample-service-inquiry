@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
-  #before_action :current_user
-  #before_action :authenticate_user!, {only:
-    #[:index, :index_today, :index_urgent, :solved, :unsolved, :destroy, :show, :edit, :update]}
+  before_action :current_user
+  before_action :authenticate_user!, {only:
+    [:index, :index_today, :index_urgent, :solved, :unsolved, :destroy, :show, :edit, :update]}
    
   def new
     @post = Post.new
@@ -21,7 +21,7 @@ class PostsController < ApplicationController
       summary: params[:summary],
       detail: params[:detail])
     @post.save
-    redirect_to("/posts/done")
+    redirect_to("/done")
   end
   
   def done
@@ -62,7 +62,7 @@ class PostsController < ApplicationController
     @post = Post.find_by(id: params[:id])
     @post.destroy
     flash[:notice] = "投稿を削除しました"
-    redirect_to("/posts/index")
+    redirect_to(index_path)
   end
   
   def update

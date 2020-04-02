@@ -27,10 +27,10 @@ Rails.application.routes.draw do
   get '/index',         to: 'posts#index'
   get '/index_urgent',  to: 'posts#index_urgent'
   get '/index_today',   to: 'posts#index_today'
-  get '/:id',           to: 'posts#show'
-  post '/:id/solved',   to: 'posts#solved'
-  post '/:id/unsolved', to: 'posts#unsolved'
-  get '/:id/update',    to: 'posts#update'
-  post '/:id/edit',     to: 'posts#edit'
+  get 'posts/:id',           to: 'posts#show'
+  post 'posts/:id/solved',   to: 'posts#solved'
+  post 'posts/:id/unsolved', to: 'posts#unsolved'
+  get 'posts/:id/update',    to: 'posts#update'
+  post 'posts/:id/edit',     to: 'posts#edit'
   resources :posts, only: [:destroy]
 end
