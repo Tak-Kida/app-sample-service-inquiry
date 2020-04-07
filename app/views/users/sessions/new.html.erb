@@ -18,14 +18,14 @@
       <div class="field">
         <h2>
           <%= f.label :email %><%= "を入力してください" %><br />
-          <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+          <%= f.email_field :email, value: "demo@mail.com", autofocus: true, autocomplete: "email" %>
         </h2>
       </div>
       <br>
       <div class="field">
         <h2>
           <%= f.label :password %><%= "を入力してください" %><br />
-          <%= f.password_field :password, autocomplete: "current-password" %>
+          <%= f.password_field :password, value: "password", autocomplete: "current-password" %>
         </h2>
       </div>
       <br>
