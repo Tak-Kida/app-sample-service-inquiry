@@ -7,10 +7,10 @@ Rails.application.routes.draw do
   :omniauth_callbacks => 'users/omniauth_callbacks'
   } 
   devise_scope :user do
-    get "user/:id",     to: 'users/registrations#detail'
-    get "signup",       to: 'users/registrations#new'
-    get "login",        to: 'users/sessions#new'
-    get "logout",       to: 'users/sessions#destroy'
+    get 'user/:id',     to: 'users/registrations#detail'
+    get 'signup',       to: 'users/registrations#new'
+    get 'login',        to: 'users/sessions#new'
+    get 'logout',       to: 'users/sessions#destroy'
   end
 
   resources :form
@@ -32,5 +32,5 @@ Rails.application.routes.draw do
   post 'posts/:id/unsolved', to: 'posts#unsolved'
   get 'posts/:id/update',    to: 'posts#update'
   post 'posts/:id/edit',     to: 'posts#edit'
-  resources :posts, only: [:destroy]
+  resources :posts, only: [:create, :destroy]
 end

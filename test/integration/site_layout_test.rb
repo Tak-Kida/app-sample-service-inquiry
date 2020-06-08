@@ -1,7 +1,15 @@
 require 'test_helper'
 
 class SiteLayoutTest < ActionDispatch::IntegrationTest
+  #deviseによるログイン
+  include Warden::Test::Helpers
+
+  def setup
+    @user = users(:demo)
+  end
+
   test "layout links" do
+    login_as(@user, scope: :user)
     get root_path
     assert_template 'home/top'
     assert_select "a[href=?]", index_path
@@ -32,30 +40,5 @@ class SiteLayoutTest < ActionDispatch::IntegrationTest
     assert_select "a[href=?]", top_path
     #投稿一覧が表示されていること
     #投稿の詳細へのリンクが表示されること
-
-    #get show_path
-    #assert_template 'posts/1'
-    #投稿の詳細が正しく表示されること
-
-    get new_path
-    assert_template 'posts/new'
-    #投稿入力欄が表示されていること
-    #投稿の送信ボタンが表示されること
-
-    #get confirm_path
-    #assert_template 'posts/confirm'
-    #投稿入力欄が表示されていること
-    #投稿の送信ボタンが表示されること
-    #戻る(投稿の破棄)ボタンが表示されること
-
-    get done_path
-    assert_template 'posts/done'
-    #投稿入力欄が表示されていること
-    #投稿の送信リンクが表示されること
-
-    get login_path
-    assert_template 'users/sessions/new'
-    #ログインフォームが存在すること
-    assert_select "a[href=?]", readme_path
   end
 end

@@ -1,0 +1,19 @@
+urgent_unsolved:
+  urgency: 3
+  summary: test!test!
+  detail:  this is an urgent message
+  done_flag: false
+  deal_with_policy: 検討中
+  deal_with_detail: 検討中です
+  created_at: <%= 3.days.ago %>
+  updated_at: <%= 3.days.ago %>
+
+urgent_solved:
+  urgency: 3
+  summary: test!test!
+  detail:  this is an urgent message
+  done_flag: true
+  deal_with_policy: 検討中
+  deal_with_detail: 検討中です
+  created_at: <%= 3.days.ago %>
+  updated_at: <%= 3.days.ago %>
